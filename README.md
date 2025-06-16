@@ -12,7 +12,7 @@
 
 ![tMRD](images/tMRD.png)
 
-![header](images/header.png)
+![header](images/Header.png)
 
 ## Exit self-refresh delay = 7
 
