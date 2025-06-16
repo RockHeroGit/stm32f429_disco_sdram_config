@@ -10,52 +10,52 @@
 
 ## Load mode register to Active delay = 2
 
-![tMRD](tMRD.png)
+![tMRD](images/tMRD.png)
 
-![header](header.png)
+![header](images/header.png)
 
 ## Exit self-refresh delay = 7
 
 - **ROUND_UP( tXSR / SDRAM_CLK_Period )** = `ROUND_UP( 70ns / 11.11ns ) = 7`
 
-![tXSR](tXSR.png)
+![tXSR](images/tXSR.png)
 
 ## Self-refresh time = 4
 
 - **ROUND_UP( tRAS / SDRAM_CLK_Period)** = `ROUND_UP( 42ns / 11.11ns ) = 4`
 
-![tRAS](tRAS.png)
+![tRAS](images/tRAS.png)
 
 ## SDRAM common row cycle delay = 7
 
 - **ROUND_UP( tRC / SDRAM_CLK_Period)** = `ROUND_UP( 63ns / 11.11ns ) = 6` ⇒ 7
 
-![tRC](tRC.png)
+![tRC](images/tRC.png)
 
 ## Write recovery time (TWR) = 3
 
 - tWR >= tRAS - tRCD = ( 4 - 2) ⇒ 3
 
-![tDPL](tDPL.png)
+![tDPL](images/tDPL.png)
 
 ## SDRAM common row precharge delay
 
 - **ROUND_UP( tRP / SDRAM_CLK_Period)** = `ROUND_UP( 15ns / 11.11ns ) = 2`
 
-![tRP](tRP.png)
+![tRP](images/tRP.png)
 
 ## Row to column delay
 
 - **ROUND_UP( tRCD / SDRAM_CLK_Period)** = `ROUND_UP( 15ns / 11.11ns ) = 2`
 
-![tRCD](tRCD.png)
+![tRCD](images/tRCD.png)
 
 ## External memory mode register `(unit32_t) 0 | 0 << 3 | 2 << 4 | 0 << 7 | 1 << 9`
 
     - 0010 0011 0000 -> (M2 M1 M0) | (M3) << 3 | (M6 M5 M4) << 4 | (M8 M7) << 7 | M9 << 9
     - `(unit32_t) 0 | 0 << 3 | 2 << 4 | 0 << 7 | 1 << 9`
 
-![mode_register](ModeRegister.png)
+![mode_register](images/ModeRegister.png)
 
 ## Set the device refresh rate = 1386
 
@@ -66,7 +66,7 @@
 
 - SDRAM Bank 2 starting memory address `0xD000 0000`
 
-![FMCmemoryBank](FMCmemoryBank.png)
+![FMCmemoryBank](images/FMCmemoryBank.png)
 
 ## SDRAM BANK size
 
