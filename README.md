@@ -53,7 +53,7 @@
 ## External memory mode register `(unit32_t) 0 | 0 << 3 | 2 << 4 | 0 << 7 | 1 << 9`
 
     - 0010 0011 0000 -> (M2 M1 M0) | (M3) << 3 | (M6 M5 M4) << 4 | (M8 M7) << 7 | M9 << 9
-    - `(unit32_t) 0 | 0 << 3 | 2 << 4 | 0 << 7 | 1 << 9`
+    - `(unit32_t) 0 | 0 << 3 | 3 << 4 | 0 << 7 | 1 << 9`
 
 ![mode_register](images/ModeRegister.png)
 
@@ -186,7 +186,7 @@ void FMC_init(void)
 	status = HAL_SDRAM_SendCommand(&hsdram1, &command, 0xfff);
 	/* Step 7: Program the external memory mode register */
 	command.CommandMode            = FMC_SDRAM_CMD_LOAD_MODE;/*set the MODE bits to "100" */
-	command.ModeRegisterDefinition =  (uint32_t)0 | 0<<3 | 2<<4 | 0<<7 | 1<<9;
+	command.ModeRegisterDefinition =  (uint32_t)0 | 0<<3 | 3<<4 | 0<<7 | 1<<9;
 	status = HAL_SDRAM_SendCommand(&hsdram1, &command, 0xfff);
 	/* Step 8: Set the refresh rate counter - refer to section SDRAM refresh timer register in RM0455 */
 	/* Set the device refresh rate
